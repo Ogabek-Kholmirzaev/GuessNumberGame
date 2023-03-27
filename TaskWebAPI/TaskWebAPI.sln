@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWebAPI", "TaskWebAPI\TaskWebAPI.csproj", "{72A396CF-4DF2-416D-94E7-73DFDF64CFA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskWebAPITest", "TaskWebAPITest\TaskWebAPITest.csproj", "{37FDDF7D-9C73-42FE-9242-BECF0B04AE89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{72A396CF-4DF2-416D-94E7-73DFDF64CFA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A396CF-4DF2-416D-94E7-73DFDF64CFA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A396CF-4DF2-416D-94E7-73DFDF64CFA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A396CF-4DF2-416D-94E7-73DFDF64CFA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37FDDF7D-9C73-42FE-9242-BECF0B04AE89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37FDDF7D-9C73-42FE-9242-BECF0B04AE89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37FDDF7D-9C73-42FE-9242-BECF0B04AE89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37FDDF7D-9C73-42FE-9242-BECF0B04AE89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7BC2D132-E3D7-489E-93D5-DD0C4FFDC35C}
+	EndGlobalSection
+EndGlobal
