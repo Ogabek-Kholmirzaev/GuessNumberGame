@@ -1,0 +1,49 @@
+<div class="mat-elevation-z8">
+  <h2>Leaderboard</h2>
+  <mat-form-field style="margin-top: 10px;">
+    <mat-label>Filter</mat-label>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Ex. John Doe" #input>
+  </mat-form-field>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.userName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalWins">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Wins </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalWins}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalGames">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Games </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalGames}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="totalTries">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Tries </th>
+        <td mat-cell *matCellDef="let element"> {{element.totalTries}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="successRate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Success Rate </th>
+        <td mat-cell *matCellDef="let element"> {{element.successRate}}% </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+      </tr>
+  </table>
+
+  <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator>
+
+</div>

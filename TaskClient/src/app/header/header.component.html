@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/">Home</button>
+  <button mat-button routerLink="/leaderboard">Leaderboard</button>
+
+  <span style="flex: 1 1 auto"></span>
+
+  <button mat-button *ngIf="isHaveUserName()">Your name: {{getUserName()}}</button>
+</mat-toolbar>

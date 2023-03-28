@@ -1,0 +1,26 @@
+div{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-form {
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+}
+
+.user-field, span {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+span{
+  color: red;
+}
+
+.user-form-button {
+  position: relative;
+}

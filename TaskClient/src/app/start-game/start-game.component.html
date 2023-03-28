@@ -1,0 +1,18 @@
+<div>
+  <mat-dialog-content [formGroup]="userForm">
+    <mat-form-field class="user-field">
+      <mat-label>Enter your name</mat-label>
+      <input matInput placeholder="Ex. John Doe" formControlName="userName">
+    </mat-form-field>
+    <p *ngIf="(f['userName'].touched || f['userName'].dirty) && f['userName'].errors">
+      <span *ngIf = "f['userName'].errors?.['required'] ">Name is required</span>
+    </p>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button class="user-form-button" (click)="close()">Close</button>
+    <button mat-raised-button color="primary" class="user-form-button" (click)="submit()" [disabled]="!userForm.valid">
+      Submit Name
+    </button>
+  </mat-dialog-actions>
+</div>

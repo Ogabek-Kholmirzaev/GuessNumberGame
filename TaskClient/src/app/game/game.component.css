@@ -1,0 +1,26 @@
+div{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-form, .user-form {
+  margin-top: 5px;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 5px;
+}
+
+.number-field, span, .user-field {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+span{
+  color: red;
+}
+
+.number-form-button, .user-form-button {
+  position: relative;
+}

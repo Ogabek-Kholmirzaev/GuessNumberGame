@@ -1,0 +1,96 @@
+<div>
+  <h2>Game Guess!</h2>
+  <b>Game Information</b>
+  <p>
+    <b>{{getNumberOfTries()}} attempt(s) left</b>
+  </p>
+  <p *ngIf="!isGuessResponseNotNull()">
+    <b *ngIf="gameDto?.isFinished">
+      <h3>Secret Number: {{gameDto?.secretNumber}}</h3>
+      <h2 style="color: green;" *ngIf="gameDto?.isWinner">You win</h2>
+      <h2 style="color: red;" *ngIf="!gameDto?.isWinner">You lose</h2>
+    </b>
+
+    <b *ngIf="gameDto?.isFinished">
+      <button mat-raised-button color="primary" (click)="newGame()">
+      New Game
+      </button>
+    </b>
+  </p>
+
+  <b *ngIf="isOtherTriesResultNotNull()">
+    <hr>
+    Log of Tries <br>
+    <b *ngFor="let log of this.otherTriesResult">{{log}} <br> </b>
+  </b>
+
+  <hr>
+
+  <h3 *ngIf="isGuessResponseNotNull()">Previous try</h3>
+  <p *ngIf="isGuessResponseNotNull()">
+    <b>Message: {{guessResponse?.message}}</b> <br>
+    <b *ngIf="this.guessNumber">Guess number: {{this.guessNumber}}</b> <br>
+    <b *ngIf="guessResponse?.isFinished">
+      <h3>Secret Number: {{gameDto?.secretNumber}}</h3>
+      <h2 style="color: green;" *ngIf="guessResponse?.isWinner">You win</h2>
+      <h2 style="color: red;" *ngIf="!guessResponse?.isWinner">You lose</h2>
+    </b>
+
+    <b *ngIf="guessResponse?.isFinished">
+      <button mat-raised-button color="primary" (click)="newGame()">
+      New Game
+      </button>
+    </b>
+  </p>
+
+  <mat-card *ngIf="!guessResponse?.isFinished">
+    <form class="number-form" [formGroup]="numberForm" (submit)="submitForm()" *ngIf="!gameDto?.isFinished">
+      <mat-form-field class="number-field">
+        <mat-label>Thousands number</mat-label>
+        <input type="number" min="0" max="9" matInput formControlName="thousands">
+      </mat-form-field>
+      <p *ngIf="(f['thousands'].touched || f['thousands'].dirty) && f['thousands'].errors">
+        <span *ngIf = "f['thousands'].errors?.['required'] ">A digit is required</span>
+        <span *ngIf = "f['thousands'].errors?.['min'] ">The minimum value is 0</span>
+        <span *ngIf = "f['thousands'].errors?.['max'] ">The maximum value is 9</span>
+      </p>
+
+      <mat-form-field class="number-field">
+        <mat-label>Hundreds number</mat-label>
+        <input type="number" min="0" max="9" matInput formControlName="hundreds">
+      </mat-form-field>
+      <p *ngIf="(f['hundreds'].touched || f['hundreds'].dirty) && f['hundreds'].errors">
+        <span *ngIf = "f['hundreds'].errors?.['required'] ">A digit is required</span>
+        <span *ngIf = "f['hundreds'].errors?.['min'] ">The minimum value is 0</span>
+        <span *ngIf = "f['hundreds'].errors?.['max'] ">The maximum value is 9</span>
+      </p>
+
+      <mat-form-field class="number-field">
+        <mat-label>Tens number</mat-label>
+        <input type="number" min="0" max="9" matInput formControlName="tens">
+      </mat-form-field>
+      <p *ngIf="(f['tens'].touched || f['tens'].dirty) && f['tens'].errors">
+        <span *ngIf = "f['tens'].errors?.['required'] ">A digit is required</span>
+        <span *ngIf = "f['tens'].errors?.['min'] ">The minimum value is 0</span>
+        <span *ngIf = "f['tens'].errors?.['max'] ">The maximum value is 9</span>
+      </p>
+
+      <mat-form-field class="number-field">
+        <mat-label>Ones number</mat-label>
+        <input type="number" min="0" max="9" matInput formControlName="ones">
+      </mat-form-field>
+      <p *ngIf="(f['ones'].touched || f['ones'].dirty) && f['ones'].errors">
+        <span *ngIf = "f['ones'].errors?.['required'] ">A digit is required</span>
+        <span *ngIf = "f['ones'].errors?.['min'] ">The minimum value is 0</span>
+        <span *ngIf = "f['ones'].errors?.['max'] ">The maximum value is 9</span>
+      </p>
+
+    <p *ngIf="numberForm.valid">Your guess number is {{getNumber()}}</p>
+
+    <button mat-raised-button color="primary" class="number-form-button" [disabled]="!numberForm.valid">
+      Guess number
+    </button>
+
+    </form>
+  </mat-card>
+</div>
